@@ -1,4 +1,4 @@
-namespace ConductorAI.Models;
+namespace ConductorAI.Api.Models;
 
 public class ApiKey
 {
