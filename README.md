@@ -45,12 +45,12 @@ Under active development
 
 ## Setup
 
-Copy the example and fill in your values:
+Copy the example and fill in your values (from the repo root):
 
 ```bash
-cp appsettings.json appsettings.Development.json
+cp ConductorAI.Api/appsettings.json ConductorAI.Api/appsettings.Development.json
 ```
 
-Then edit `appsettings.Development.json` with your local configuration.
+Then edit `appsettings.Development.json` in `ConductorAI.Api/` with your local configuration.
 Never commit `appsettings.Development.json` — it contains sensitive values
 and is excluded by .gitignore.
