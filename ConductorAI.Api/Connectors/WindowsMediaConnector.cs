@@ -7,18 +7,15 @@ public class WindowsMediaConnector : IDeviceConnector
     public string Name => "Windows Media";
     public string Scope => "media";
 
-    public Task<object> GetStatusAsync()
+    Task<ConnectorResult> IDeviceConnector.GetStatusAsync()
     {
-        // SMTC implementation
-        throw new NotImplementedException("Soon...");
+        throw new NotImplementedException();
     }
 
-    public Task<object> ExecuteAsync(string action, Dictionary<string, object>? parameters = null)
+    Task<ConnectorResult> IDeviceConnector.ExecuteAsync(string action, Dictionary<string, string>? parameters)
     {
-        // SMTC implementation
-        throw new NotImplementedException("Soon...");
-    }   
-
+        throw new NotImplementedException();
+    }
 }
 
 #endif
