@@ -1,0 +1,9 @@
+namespace ConductorAI.Api.Connectors;
+
+public interface IDeviceConnector
+{
+    string Name { get; }
+    string Scope { get; }
+    Task<object> GetStatusAsync();
+    Task<object> ExecuteAsync(string action, Dictionary<string, object>? parameters = null);
+}
