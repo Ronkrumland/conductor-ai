@@ -4,6 +4,6 @@ public interface IDeviceConnector
 {
     string Name { get; }
     string Scope { get; }
-    Task<object> GetStatusAsync();
-    Task<object> ExecuteAsync(string action, Dictionary<string, object>? parameters = null);
+    Task<ConnectorResult> GetStatusAsync();
+    Task<ConnectorResult> ExecuteAsync(string action, Dictionary<string, string>? parameters = null);
 }
