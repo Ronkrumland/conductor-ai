@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <!-- Windows only dependencies -->
-  <ItemGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
     <DefineConstants>$(DefineConstants);WINDOWS</DefineConstants>
-    <PackageReference Include="Microsoft.Windows.SDK.Contracts" Version="10.0.22621.755" />
-  </ItemGroup>
+  </PropertyGroup>
 
   <!-- Cross-platform dependencies -->
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
+    <PackageReference Include="Scalar.AspNetCore" Version="2.13.6" />
   </ItemGroup>
 
 </Project>
