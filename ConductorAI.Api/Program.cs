@@ -1,20 +1,25 @@
 using ConductorAI.Api.Connectors;
+using ConductorAI.Models;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.Configure<HueSettings>(builder.Configuration.GetSection(HueSettings.Section));
+builder.Services.Configure<WeatherSettings>(builder.Configuration.GetSection(WeatherSettings.Section));
+builder.Services.Configure<OllamaSettings>(builder.Configuration.GetSection(OllamaSettings.Section));
+builder.Services.Configure<AuthSettings>(builder.Configuration.GetSection(AuthSettings.Section));
+
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddHealthChecks();
+
 
 // Cross-platform services, we will always register these
 
 
 // Windows-only services, only register these if we're on Windows
 #if WINDOWS
-    builder.Services.AddSingleton<IDeviceConnector, WindowsMediaConnector>();
+builder.Services.AddSingleton<IDeviceConnector, WindowsMediaConnector>();
 #endif
 
 var app = builder.Build();
